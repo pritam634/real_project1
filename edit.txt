@@ -1,0 +1,35 @@
+<div class="mapouter"><div class="gmap_canvas"><iframe width="770" height="510" id="gmap_canvas" src="https://maps.google.com/maps?q=9/ 5, Sukanta Pally Rd, Dhandabag, Durgapur, West Bengal&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:510px;width:770px;}</style><a href="https://embedgooglemap.2yu.co">html embed google map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:510px;width:770px;}</style></div></div>
+
+'https://script.google.com/macros/s/AKfycbwRM8YTpYpDa9kbbso5sSzpaf1dI5pzZjvsT3eJHxcgPs3c690i2JTnLwBGSvMgyz4/exec'
+
+signal.innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>Success!</strong> Thanks for your subbmission
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>`;
+
+
+    <script>
+        // https://script.google.com/macros/s/AKfycbwRM8YTpYpDa9kbbso5sSzpaf1dI5pzZjvsT3eJHxcgPs3c690i2JTnLwBGSvMgyz4/exec
+
+        const form = document.querySelector("form");
+         form.addEventListener("submit", async function (e) {
+            const signal = document.querySelector(".signal");
+            e.preventDefault();
+            const data = new FormData(form);
+            console.log(data);
+            // return;
+            const res = await fetch('https://script.google.com/macros/s/AKfycbwRM8YTpYpDa9kbbso5sSzpaf1dI5pzZjvsT3eJHxcgPs3c690i2JTnLwBGSvMgyz4/exec', {
+                method: "POST",
+                body: data
+            });
+            console.log(res);
+            if (res) {
+                signal.innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>Success!</strong> Thanks for your subbmission
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>`;
+            }
+        });
+    </script>
